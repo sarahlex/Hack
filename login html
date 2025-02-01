@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Management Login</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      height: 100vh;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+    }
+
+    .left-section {
+      flex: 1;
+      background-color: #325e7b;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 50px;
+    }
+
+    .left-section h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .left-section p {
+      font-size: 1.2rem;
+      text-align: center;
+      max-width: 400px;
+    }
+
+    .right-section {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+    }
+
+    .login-container {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      color: #555;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #325e7b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #2a4d61;
+    }
+
+    .role-group {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .message {
+      text-align: center;
+      color: red;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-section">
+      <h1>Welcome to Eventify!</h1>
+      <p>Your one-stop platform for event management, connecting organizers and service providers effortlessly.</p>
+    </div>
+
+    <div class="right-section">
+      <div class="login-container">
+        <h2>Login</h2>
+        <div class="message" id="message"></div>
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter your username" aria-label="Username">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" aria-label="Password">
+
+        <div class="role-group">
+          <label>
+            <input type="radio" name="role" id="event-organizer" value="Event Organizer"> Event Organizer
+          </label>
+          <label>
+            <input type="radio" name="role" id="service-provider" value="Service Provider"> Service Provider
+          </label>
+        </div>
+
+        <div class="extra-buttons">
+          <button onclick="navigateToSignup()">Sign in</button>
+          <button onclick="navigateToLogin()">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function displayMessage(message) {
+      const messageDiv = document.getElementById('message');
+      messageDiv.textContent = message;
+    }
+
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (!username || !password) {
+        displayMessage('Please enter both username and password.');
+        return;
+      }
+
+      const isEventOrganizer = document.getElementById('event-organizer').checked;
+      const isServiceProvider = document.getElementById('service-provider').checked;
+
+      if (!isEventOrganizer && !isServiceProvider) {
+        displayMessage('Please select a role: Event Organizer or Service Provider.');
+        return;
+      }
+
+      const role = isEventOrganizer ? 'Event Organizer' : 'Service Provider';
+      displayMessage(`Logged in as ${role} with username: ${username}`);
+      // Redirect or handle login as needed
+    }
+
+    function navigateToSignup() {
+      const isEventOrganizer = document.getElementById('event-organizer').checked;
+      const isServiceProvider = document.getElementById('service-provider').checked;
+
+      if (isEventOrganizer) {
+        window.location.href = 'eventgo.html'; // Redirect to organiser signup page
+      } else if (isServiceProvider) {
+        window.location.href = 'plan3.html'; // Redirect to service provider signup page
+      } else {
+        displayMessage('Please select a role before signing up.');
+      }
+    }
+
+    function navigateToLogin() {
+      displayMessage(''); // Clear previous messages
+      login();
+    }
+  </script>
+</body>
+</html>
