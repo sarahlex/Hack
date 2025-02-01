@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventify</title>
+  <style>
+    .chatbot-popup {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 400px;
+      height: 600px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      z-index: 200;
+      overflow: hidden;
+    }
+    
+    .chatbot-popup .close-btn {
+      position: absolute;
+      top: 5px;
+      right: 60px;
+      margin-top: 15px;
+      background: rgb(157, 42, 42);
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 14px;
+      border-radius: 5px;
+    }
+    
+    .chatbot-popup .close-btn:hover {
+      background: darkred;
+    }
+    
+    /* General Reset */
+    body, h1, h3, p {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Overall Layout */
+    body {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    /* Banner */
+    .banner {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+    }
+
+    .banner h1 {
+      margin: 0;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 200px;
+      background-color: #2c3e50;
+      color: white;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      padding-top: 20px;
+      height: 100%;
+    }
+
+    .sidebar button {
+      background-color: #34495e;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-size: 16px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .sidebar button:hover {
+      background-color: #2980b9;
+    }
+
+    /* Main Content Area */
+    .main-content {
+      margin-left: 220px;
+      margin-top: 60px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    /* Service Provider Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      width: 80%;
+    }
+
+    .grid-item {
+      background-color: white;
+      padding: 15px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      text-align: center;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .grid-item:hover {
+      transform: scale(1.05);
+    }
+
+    .grid-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .grid-item h3 {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    .grid-item p {
+      color: #555;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    /* Cart Section */
+    .cart {
+      width: 20%;
+      background-color: white;
+      padding: 15px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      position: sticky;
+      top: 60px;
+      height: calc(100vh - 60px);
+    }
+
+    .cart h2 {
+      text-align: center;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+
+    .cart-item p {
+      margin: 0;
+    }
+
+    .cart button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .cart button:hover {
+      background-color: #2980b9;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Banner -->
+  <div class="banner">
+    <h1>Eventify</h1>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <button>Profile</button>
+    <button>Messages</button>
+    <button>+ Post Event</button>
+    <button onclick="toggleChatbot()">Chatbot</button>
+
+    
+  </div>
+  <div id="chatbot-container" class="chatbot-popup">
+    <iframe
+      src="https://www.chatbase.co/chatbot-iframe/N6FM4h9aO1hLwb2wxuMNz"
+      width="100%"
+      style="height: 80%; min-height: 600px"
+      frameborder="20"
+    ></iframe>
+    <button class="close-btn" onclick="toggleChatbot()">Close</button>
+  </div>
+  
+  <!-- Main Content Area -->
+  <div class="main-content">
+
+    <!-- Service Provider Grid (Events) -->
+    <div class="grid">
+      <div class="grid-item" data-name="Food Catering" data-price="300">
+        <img src="service provider pics/event.jpg" alt="Event 1">
+        <div class="grid-item" onclick="window.location.href='service_profile.html';">
+          <h3>Service Provider 1</h3>
+        </div>
+       
+        <p>Catering, Decoration</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="grid-item" data-name="Lighting Setup" data-price="150">
+        <img src="service provider pics/Sound-and-Lighting.jpg" alt="Event 2">
+        <h3>Service Provider 2</h3>
+        <p>Lighting, Photography</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="grid-item" data-name="Photography" data-price="500">
+        <img src="service provider pics/dj-setup.jpg" alt="Event 3">
+        <h3>Service Provider 3</h3>
+        <p>Sound System, DJ</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="grid-item" data-name="Seating" data-price="200">
+        <img src="service provider pics/seating.jpg" alt="Event 4">
+        <h3>Service Provider 4</h3>
+        <p>Seating, Security</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="grid-item" data-name="Venue" data-price="400">
+        <img src="service provider pics/table.webp" alt="Event 5">
+        <h3>Service Provider 5</h3>
+        <p>Photography, Venue</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="grid-item" data-name="Stage Setup" data-price="350">
+        <img src="service provider pics/photo.webp" alt="Event 6">
+        <h3>Service Provider 6</h3>
+        <p>Stage Setup, Lighting</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="grid-item" data-name="Food and Drink" data-price="300">
+        <img src="service provider pics/food.jpeg" alt="Event 7">
+        <h3>Service Provider 7</h3>
+        <p>Food, Drink</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="grid-item" data-name="Decoration" data-price="150">
+        <img src="service provider pics/seating.jpg" alt="Event 8">
+        <h3>Service Provider 8</h3>
+        <p>Decoration, Music</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="grid-item" data-name="Catering" data-price="300">
+        <img src="service provider pics/dj-setup.jpg" alt="Event 9">
+        <h3>Service Provider 9</h3>
+        <p>Sound, Catering</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Cart Section -->
+    <div class="cart">
+      <h2>Cart</h2>
+      <div class="cart-item">
+        <p><strong>Budget:</strong></p>
+        <p><strong>$1000</strong></p>
+      </div>
+      <div class="cart-items-list"></div>
+      <div class="cart-item">
+        <p><strong>Total:</strong></p>
+        <p class="total-price"><strong>$0</strong></p>
+      </div>
+      <div class="cart-item">
+        <p><strong>Balance:</strong></p>
+        <p class="balance"><strong>$1000</strong></p>
+      </div>
+      <button id="proceed">Proceed Plan</button>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleChatbot() {
+      const chatbot = document.getElementById("chatbot-container");
+      chatbot.style.display = chatbot.style.display === "block" ? "none" : "block";
+    }
+    
+    const budget = 1000;
+    let total = 0;
+
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', function() {
+        const gridItem = this.parentElement;
+        const name = gridItem.getAttribute('data-name');
+        const price = parseFloat(gridItem.getAttribute('data-price'));
+
+        total += price;
+
+        const cartItemsList = document.querySelector('.cart-items-list');
+        const itemElement = document.createElement('div');
+        itemElement.classList.add('cart-item');
+        itemElement.innerHTML = `<p>${name}</p><p>$${price.toFixed(2)}</p>`;
+        cartItemsList.appendChild(itemElement);
+
+        updateCart();
+      });
+    });
+
+    function updateCart() {
+      const totalPriceElement = document.querySelector('.total-price');
+      const balanceElement = document.querySelector('.balance');
+
+      totalPriceElement.innerHTML = `<strong>$${total.toFixed(2)}</strong>`;
+      balanceElement.innerHTML = `<strong>$${(budget - total).toFixed(2)}</strong>`;
+    }
+
+    document.getElementById('proceed').addEventListener('click', function() {
+      alert('Proceeding with your plan!');
+    });
+  </script>
+
+</body>
+</html>
