@@ -11,7 +11,7 @@
 - Member 3: Sarah Alex - Mar Athanasius College of Engineering
 
 ### Hosted Project Link
-http://127.0.0.1:5500/login.html
+[http://127.0.0.1:5500/login.html](https://github.com/sarahlex/Hack/tree/main)
 
 ### Project Description
 Eventify helps users plan events by connecting them with service providers. It supports easy budget tracking and customized contributions. The built-in chatbot guides users through the process, and payments are made through the app, held until service completion, ensuring trust and security.
@@ -85,7 +85,7 @@ For Hardware:
 *Add caption explaining the schematic*
 
 # Build Photos
-![Team](Add photo of your team here)
+![WhatsApp Image 2025-02-02 at 11 06 46_12640677](https://github.com/user-attachments/assets/ce9798d7-a837-4669-adc8-47aef29c5c63)
 
 
 ![Components](Add photo of your components here)
