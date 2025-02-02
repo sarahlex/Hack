@@ -1,0 +1,84 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Main Container */
+.container {
+  width: 80%;
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Event Header */
+.event-header {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #ddd;
+}
+
+.event-header h1 {
+  font-size: 28px;
+  color: #333;
+}
+
+.date-location {
+  font-size: 16px;
+  color: #666;
+}
+
+.description {
+  margin-top: 10px;
+  color: #555;
+}
+
+/* Sponsorship Status */
+.sponsorship-status {
+  display: inline-block;
+  padding: 8px 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.looking {
+  background-color: #28a745;
+  color: white;
+}
+
+.not-looking {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Requirements Section */
+.requirements-section h2, .contact-section h2 {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.requirements-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.requirements-section li {
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+/* Contact Section */
+.contact-section p {
+  font-size: 16px;
+  margin: 5px 0;
+}
