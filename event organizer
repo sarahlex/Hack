@@ -255,54 +255,63 @@
           <h3>Service Provider 1</h3>
         </div>
         <p>Catering, Decoration</p>
+        <p>$300</p>
         <button class="add-to-cart">Add to Cart</button>
       </div>
       <div class="grid-item" data-name="Lighting Setup" data-price="150">
         <img src="service provider pics/Sound-and-Lighting.jpg" alt="Event 2">
         <h3>Service Provider 2</h3>
         <p>Lighting, Photography</p>
+        <p>$150</p>
         <button class="add-to-cart">Add to Cart</button>
       </div>
       <div class="grid-item" data-name="Photography" data-price="500">
         <img src="service provider pics/dj-setup.jpg" alt="Event 3">
         <h3>Service Provider 3</h3>
         <p>Sound System, DJ</p>
+        <p>$500</p>
         <button class="add-to-cart">Add to Cart</button>
       </div>
       <div class="grid-item" data-name="Seating" data-price="200">
         <img src="service provider pics/seating.jpg" alt="Event 4">
         <h3>Service Provider 4</h3>
         <p>Seating, Security</p>
+        <p>$200</p>
         <button class="add-to-cart">Add to Cart</button>
       </div>
       <div class="grid-item" data-name="Venue" data-price="400">
         <img src="service provider pics/table.webp" alt="Event 5">
         <h3>Service Provider 5</h3>
         <p>Photography, Venue</p>
+        <p>$400</p>
         <button class="add-to-cart">Add to Cart</button>
       </div>
       <div class="grid-item" data-name="Stage Setup" data-price="350">
         <img src="service provider pics/photo.webp" alt="Event 6">
         <h3>Service Provider 6</h3>
         <p>Stage Setup, Lighting</p>
+        <p>$350</p>
         <button class="add-to-cart">Add to Cart</button>
       </div>
       <div class="grid-item" data-name="Food and Drink" data-price="300">
         <img src="service provider pics/food.jpeg" alt="Event 7">
         <h3>Service Provider 7</h3>
         <p>Food, Drink</p>
+        <p>$300</p>
         <button class="add-to-cart">Add to Cart</button>
       </div>
       <div class="grid-item" data-name="Decoration" data-price="150">
         <img src="service provider pics/seating.jpg" alt="Event 8">
         <h3>Service Provider 8</h3>
         <p>Decoration, Music</p>
+        <p>$150</p>
         <button class="add-to-cart">Add to Cart</button>
       </div>
       <div class="grid-item" data-name="Catering" data-price="300">
         <img src="service provider pics/dj-setup.jpg" alt="Event 9">
         <h3>Service Provider 9</h3>
         <p>Sound, Catering</p>
+        <p>$300</p>
         <button class="add-to-cart">Add to Cart</button>
       </div>
     </div>
