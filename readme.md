@@ -24,9 +24,8 @@ A one-stop AI-powered event marketplace! Organizers post their needs, vendors of
 ## Technical Details
 ### Technologies/Components Used
 For Software:
+
 -JavaScript, CSS, HTML
-- [Frameworks used]
-- [Libraries used]
 - VS studio
 
 For Hardware:
@@ -99,11 +98,8 @@ For Hardware:
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
-
-# Additional Demos
-[Add any extra demo materials/links]
+[[Add your demo video link here]
+*Explain what the video demonstrates*](https://drive.google.com/drive/folders/1mfcbgtEhPRgLdmc7pbbUYcjAFmB8e-SP?usp=drive_link)
 
 ## Team Contributions
 -Nandana S Nair - built the Service Provider Page
