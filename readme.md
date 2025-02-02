@@ -62,8 +62,18 @@ allows event organizers to set a budget and browse service providers offering va
 *Add caption explaining what this shows*
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+![WhatsApp Image 2025-02-02 at 09 52 38_ac41bd18](https://github.com/user-attachments/assets/29487000-b2e4-4686-b17a-789ff003900a)
+
+Start by Logging In as a Service Provider or Event Organizer  
+
+*Service Provider:*  
+- Discover events happening in your locality  
+- Select events and mark them on your calendar  
+- Chat directly with event organizers  
+
+*Event Organizer:*  
+- Access a smart chatbot to manage event requirements  
+- Stay within specified budget limits for seamless planning"
 
 For Hardware:
 
